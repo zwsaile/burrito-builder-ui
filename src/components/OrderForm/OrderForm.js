@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './OrderForm.css';
 import { submitOrders } from '../../apiCalls';
 
 class OrderForm extends Component {
@@ -59,8 +60,9 @@ class OrderForm extends Component {
           value={this.state.name}
           onChange={e => this.handleNameChange(e, e.target.value)}
         />
-
-        { ingredientButtons }
+        <div className='ing-btns'>
+          { ingredientButtons }
+        </div>
 
         <p className='order-list'>Order: { this.state.ingredients.join(', ') || 'Nothing selected' }</p>
 
